@@ -1,0 +1,455 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+  background-image: linear-gradient(to right, #232A33, #365355);
+  color: #fff;
+  padding: auto 0;
+}
+nav{
+  background-image: linear-gradient(to right, #232A33, #365355);
+  height: 100px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 20px;
+  line-height: 100px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: auto 5px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 100px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 20px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -110%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+#deleteModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+#AddDataModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+#alertDeleteModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+#alertAddModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+#UpdateAlert{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#dataForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#DataWrap{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+#DataWrap input{
+  border-radius: 10px;
+  width: 100%;
+}
+#DataWrap-nama{
+  display: flex;
+  flex-direction: row;
+  gap: 37px;
+}
+#DataWrap-nama input{
+  border-radius: 10px;
+  width: 100%;
+}
+#DataWrap-prodi{
+  display: flex;
+  flex-direction: row;
+  gap: 42px;
+}
+#DataWrap-prodi input{
+  border-radius: 10px;
+  width: 100%;
+}
+#DataWrap-alamat{
+  display: flex;
+  flex-direction: row;
+  gap: 29.5px;
+}
+#DataWrap-alamat input{
+  border-radius: 10px;
+  width: 100%;
+}
+
+#editDataForm{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+
+#FormEditNama, #FormEditAlamat, #FormEditProdi{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+#FormEditNama{
+  gap: 37px;
+}
+#FormEditNama input{
+  border-radius: 10px;
+  width: 100%;
+}
+#FormEditProdi{
+  gap: 42px;
+}
+#FormEditProdi input{
+  border-radius: 10px;
+  width: 100%;
+}
+#FormEditAlamat{
+  gap: 29.5px;
+}
+#FormEditAlamat input{
+  border-radius: 10px;
+  width: 100%;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  
+  padding: 10px;
+  text-align: left;
+}
+table tr:nth-child(1){
+  background-color: #77ABAE;
+}
+#dataBody tr:nth-child(odd) {
+  font-weight: bold;
+  background-color: #ffffff
+
+  ;
+}
+#dataBody tr:nth-child(even) {
+  font-weight: bold;
+  background-color: #e9eeec;
+}
+
+  
+button {
+padding: 10px 20px;
+background-color: #0056b3;
+color: #fff;
+border: none;
+cursor: pointer;
+border-radius: 20px;
+}
+#add,
+#delete,
+#edit {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button img{
+  width: 30px;
+}
+button:hover {
+  background-color: #007bff;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+.modal-content-update {
+  background-image: linear-gradient(to bottom, yellow 40% , white  10% );
+  text-align: center;
+  margin: 15% auto;
+  height: 30%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+.modal-content-update button{
+  border-radius: 20px;
+}
+.modal-content-add {
+  background-image: linear-gradient(to bottom, #1b5238 45% , white  10% );
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  margin: 15% auto;
+  height: 20%;
+  padding: 40px;
+  border: 1px solid #888;
+  width: 20%;
+}
+.modal-content-add button{
+  margin-top: 40px;
+  border-radius: 20px;
+}
+#editModalTitle{
+  padding: 20px;
+  color: white;
+}
+.modal-content-edit {
+  background-image: linear-gradient(to bottom, #1b5238 27% , white  10% );
+  color: black;
+  font-weight: 600;
+  margin: 15% auto;
+  height: 60%;
+  padding: 40px;
+  border: 1px solid #888;
+  width: 25%;
+}
+
+.modal-content-delete {
+  background-image: linear-gradient(to bottom, #ce2929 45% , white  10% );
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin: 15% auto;
+  height: 19%;
+  padding: 40px;
+  border: 1px solid #888;
+  width: 25%;
+}
+#Confirmation-ButtonWrap{
+  margin-top: 12%;
+}
+#Confirmation-ButtonWrap button{
+  border-radius: 20px;
+}
+.modal-content-edit button{
+  border-radius: 20px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#footer-container{
+  color: white;
+  padding: 20px;
+  background-image: linear-gradient(to right, #232A33, #365355);
+}
+.alert {
+    display: none;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.alert.show {
+    display: block;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.alert.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.alert.update {
+    background-color: yellow;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.alert.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+  
